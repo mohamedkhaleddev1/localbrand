@@ -171,7 +171,8 @@ const icons = { search: "⌕", bag: "🛒", heart: "♡", user: "○" };
 function EchoLogo({ className = "" }: { className?: string }) {
   return (
     <span className={`echo-logo ${className}`.trim()} aria-label="ECHO">
-      <img src="/echo-logo.jpeg" alt="ECHO" />
+      <img className="echo-logo-light" src="/echo-logo-light.png" alt="ECHO" />
+      <img className="echo-logo-dark" src="/echo-logo.jpeg" alt="" aria-hidden="true" />
     </span>
   );
 }

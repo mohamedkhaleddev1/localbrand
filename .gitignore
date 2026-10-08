@@ -18,6 +18,7 @@
 # next.js
 /.next/
 /.next-stale-*/
+/.next-cache-old-*/
 /.vinext/
 /out/
 
@@ -44,6 +45,7 @@ tsconfig.tsbuildinfo
 /.wrangler/
 /outputs/
 /output/
+/tmp/
 /work/
 .devserver.*.log
 .*-login*.log

@@ -222,46 +222,75 @@ header {
 .echo-logo {
   display: inline-block;
   position: relative;
-  width: 150px;
-  height: 32px;
+  width: 130px;
+  height: 28px;
   overflow: hidden;
   vertical-align: middle;
-  background: #050505;
 }
 .echo-logo img {
   position: absolute;
-  width: 225px;
   max-width: none;
   height: auto;
-  left: -35px;
-  top: -77px;
 }
-.echo-logo-loading {
-  width: min(360px, 75vw);
-  height: min(72px, 15vw);
-}
-.echo-logo-loading img {
-  width: min(540px, 112.5vw);
-  left: max(-85px, -17.7vw);
-  top: max(-186px, -38.75vw);
-}
-.admin-logo .echo-logo {
-  width: 120px;
-  height: 26px;
-}
-.admin-logo .echo-logo img {
-  width: 180px;
-  left: -28px;
+.echo-logo .echo-logo-light {
+  display: block;
+  width: 186px;
+  left: -25px;
   top: -62px;
 }
-.foot-brand .echo-logo {
-  width: 220px;
-  height: 46px;
+.echo-logo .echo-logo-dark {
+  display: none;
+  width: 195px;
+  left: -30px;
+  top: -68px;
 }
-.foot-brand .echo-logo img {
-  width: 330px;
-  left: -52px;
-  top: -113px;
+.dark-mode .echo-logo-light {
+  display: none;
+}
+.dark-mode .echo-logo-dark {
+  display: block;
+}
+.echo-logo-loading {
+  width: min(320px, 72vw);
+  height: min(68px, 15vw);
+}
+.echo-logo-loading .echo-logo-light {
+  width: min(456px, 102.6vw);
+  left: max(-61px, -13.7vw);
+  top: max(-152px, -34.2vw);
+}
+.echo-logo-loading .echo-logo-dark {
+  width: min(480px, 108vw);
+  left: max(-74px, -16.65vw);
+  top: max(-167px, -37.6vw);
+}
+.admin-logo .echo-logo {
+  width: 105px;
+  height: 23px;
+}
+.admin-logo .echo-logo-light {
+  width: 150px;
+  left: -20px;
+  top: -50px;
+}
+.admin-logo .echo-logo-dark {
+  width: 158px;
+  left: -24px;
+  top: -55px;
+}
+.foot-brand .echo-logo {
+  width: 190px;
+  height: 41px;
+}
+.foot-brand .echo-logo-light {
+  width: 272px;
+  left: -37px;
+  top: -91px;
+}
+.foot-brand .echo-logo-dark {
+  width: 285px;
+  left: -44px;
+  top: -99px;
 }
 .brand > span:not(.logo-e),
 .admin-logo > span:not(.logo-e) {
