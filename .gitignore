@@ -12,6 +12,8 @@
 
 # testing
 /coverage
+/playwright-report/
+/test-results/
 
 # next.js
 /.next/
@@ -41,8 +43,12 @@ tsconfig.tsbuildinfo
 /dist/
 /.wrangler/
 /outputs/
+/output/
 /work/
 .devserver.*.log
+.*-login*.log
+/.codex-artifacts/
+/.codex-finalizer/
 /cairo26-site*.tar.gz
 /wrangler.local.jsonc
 

@@ -1,0 +1,13 @@
+.next
+.next-stale-*
+node_modules
+build
+dist
+output
+tmp
+playwright-report
+test-results
+.codex-artifacts
+.codex-finalizer
+*.tar.gz
+*.log
