@@ -1,5 +1,6 @@
 .next
 .next-stale-*
+.next-cache-old-*
 node_modules
 build
 dist
