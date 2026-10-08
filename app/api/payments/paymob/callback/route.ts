@@ -21,7 +21,7 @@ export async function POST(request: Request) {
     (transaction.order as Record<string, unknown> | undefined)
       ?.merchant_order_id || "",
   );
-  const match = merchantOrderId.match(/^WESTERN-(\d+)$/);
+  const match = merchantOrderId.match(/^ECHO-(\d+)$/);
   if (!match) return Response.json({ ok: true });
   const pendingId = Number(match[1]);
 

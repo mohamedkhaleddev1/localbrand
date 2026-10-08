@@ -30,10 +30,10 @@ export async function sendNewOrderEmail(order: Record<string, unknown>) {
     method: "POST",
     headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
     body: JSON.stringify({
-      from: process.env.CONTACT_FROM_EMAIL || "WESTERN Orders <onboarding@resend.dev>",
+      from: process.env.CONTACT_FROM_EMAIL || "ECHO Orders <onboarding@resend.dev>",
       to: [to],
       reply_to: String(order.email || ""),
-      subject: `New WESTERN order #${order.id} — ${Number(order.total || 0).toLocaleString("en-US")} EGP`,
+      subject: `New ECHO order #${order.id} — ${Number(order.total || 0).toLocaleString("en-US")} EGP`,
       html: `
         <h1>New order #${escapeHtml(order.id)}</h1>
         <h2>Customer</h2>
@@ -78,14 +78,14 @@ export async function sendOrderCancelledEmail(order: Record<string, unknown>) {
     auth: { user: gmailUser, pass: gmailAppPassword },
   });
   await transporter.sendMail({
-    from: `WESTERN Orders <${gmailUser}>`,
+    from: `ECHO Orders <${gmailUser}>`,
     to: customerEmail,
     replyTo: gmailUser,
-    subject: `Your WESTERN order #${order.id} was cancelled`,
+    subject: `Your ECHO order #${order.id} was cancelled`,
     html: `
         <h1>ORDER CANCELLED</h1>
         <p>Hello ${escapeHtml(customerName || "Customer")},</p>
-        <p>Your WESTERN order <strong>#${escapeHtml(order.id)}</strong> has been cancelled.</p>
+        <p>Your ECHO order <strong>#${escapeHtml(order.id)}</strong> has been cancelled.</p>
         <ul>${itemList}</ul>
         <p><strong>Order total:</strong> ${Number(order.total || 0).toLocaleString("en-US")} EGP</p>
         <p>If you have any questions, reply to this email and our team will help you.</p>`,

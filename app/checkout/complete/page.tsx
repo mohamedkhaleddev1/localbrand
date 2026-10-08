@@ -19,7 +19,7 @@ function CheckoutCompleteContent() {
           : "Your payment could not be completed. Please try again or choose cash on delivery."}
       </p>
       <Link className="add" href="/" style={{ display: "inline-block", marginTop: 24 }}>
-        BACK TO WESTERN
+        BACK TO ECHO
       </Link>
     </div>
   );

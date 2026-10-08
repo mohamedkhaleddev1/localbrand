@@ -1,4 +1,4 @@
-# Western Store
+# Echo Store
 
 Next.js storefront and admin dashboard backed by MongoDB Atlas through Mongoose.
 

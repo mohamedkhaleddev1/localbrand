@@ -219,6 +219,50 @@ header {
   background: none;
   white-space: nowrap;
 }
+.echo-logo {
+  display: inline-block;
+  position: relative;
+  width: 150px;
+  height: 32px;
+  overflow: hidden;
+  vertical-align: middle;
+  background: #050505;
+}
+.echo-logo img {
+  position: absolute;
+  width: 225px;
+  max-width: none;
+  height: auto;
+  left: -35px;
+  top: -77px;
+}
+.echo-logo-loading {
+  width: min(360px, 75vw);
+  height: min(72px, 15vw);
+}
+.echo-logo-loading img {
+  width: min(540px, 112.5vw);
+  left: max(-85px, -17.7vw);
+  top: max(-186px, -38.75vw);
+}
+.admin-logo .echo-logo {
+  width: 120px;
+  height: 26px;
+}
+.admin-logo .echo-logo img {
+  width: 180px;
+  left: -28px;
+  top: -62px;
+}
+.foot-brand .echo-logo {
+  width: 220px;
+  height: 46px;
+}
+.foot-brand .echo-logo img {
+  width: 330px;
+  left: -52px;
+  top: -113px;
+}
 .brand > span:not(.logo-e),
 .admin-logo > span:not(.logo-e) {
   display: inline-block;

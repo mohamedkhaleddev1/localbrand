@@ -168,6 +168,14 @@ const products: Product[] = [
 
 const icons = { search: "⌕", bag: "🛒", heart: "♡", user: "○" };
 
+function EchoLogo({ className = "" }: { className?: string }) {
+  return (
+    <span className={`echo-logo ${className}`.trim()} aria-label="ECHO">
+      <img src="/echo-logo.jpeg" alt="ECHO" />
+    </span>
+  );
+}
+
 const EGYPT_GOVERNORATES = [
   "ALEXANDRIA", "ASWAN", "ASYUT", "BEHEIRA", "BENI SUEF", "CAIRO",
   "DAKAHLIA", "DAMIETTA", "FAYOUM", "GHARBIA", "GIZA", "ISMAILIA",
@@ -205,7 +213,7 @@ export default function Cairo26App({
         "DESIGNED IN CAIRO",
         "EASY 14-DAY EXCHANGES",
       ],
-      marquee: "STREET-BORN   القاهرة   BUILT DIFFERENT   WESTERN",
+      marquee: "STREET-BORN   القاهرة   BUILT DIFFERENT   ECHO",
       deliveryFee: 80,
       freeDeliveryFrom: 2500,
       eyebrow: "SS / 26 — DROP 01",
@@ -473,7 +481,7 @@ export default function Cairo26App({
   if (!homepageLoaded) {
     return (
       <main className="site-loading" aria-busy="true" aria-label="Loading store">
-        WESTERN
+        <EchoLogo className="echo-logo-loading" />
       </main>
     );
   }
@@ -496,7 +504,7 @@ export default function Cairo26App({
             ☰
           </button>
           <button className="brand" onClick={() => go("home")}>
-            WESTERN
+            <EchoLogo />
           </button>
         </div>
         <nav className={menu ? "open" : ""}>
@@ -836,7 +844,7 @@ function Home({
             CAIRO.
           </h2>
           <p>
-            WESTERN is an independent streetwear label shaped by the contrast,
+            ECHO is an independent streetwear label shaped by the contrast,
             rhythm and raw energy of Egypt&apos;s capital. Designed locally. Made to
             move.
           </p>
@@ -936,7 +944,7 @@ function Shop({
   return (
     <div className="page">
       <div className="page-title">
-        <small>WESTERN / SHOP</small>
+        <small>ECHO / SHOP</small>
         <h1>ALL PRODUCTS</h1>
         <p>ESSENTIALS FOR THE CITY — DESIGNED IN CAIRO.</p>
       </div>
@@ -1321,7 +1329,7 @@ function About({ homepage }: { homepage: HomepageContent }) {
         <h2>We make clothes for people who see beauty in the unfinished.</h2>
         <div>
           <p>
-            WESTERN began with a simple idea: Egyptian streetwear should speak
+            ECHO began with a simple idea: Egyptian streetwear should speak
             in its own voice. Not borrowed. Not diluted. Ours.
           </p>
           <p>
@@ -1409,7 +1417,7 @@ function PrivacyPolicy() {
   return (
     <div className="page narrow legal-page">
       <div className="page-title">
-        <small>WESTERN / LEGAL</small>
+        <small>ECHO / LEGAL</small>
         <h1>PRIVACY POLICY</h1>
       </div>
       <p>Last updated: September 1, 2026</p>
@@ -1421,11 +1429,11 @@ function PrivacyPolicy() {
       <h2>HOW WE USE YOUR INFORMATION</h2>
       <p>
         We use your information to process and deliver orders, provide customer support,
-        send order updates, prevent fraud, and improve the WESTERN store.
+        send order updates, prevent fraud, and improve the ECHO store.
       </p>
       <h2>PAYMENTS</h2>
       <p>
-        Payment information is processed by our payment providers. WESTERN does not store
+        Payment information is processed by our payment providers. ECHO does not store
         complete card details on this website.
       </p>
       <h2>SHARING YOUR INFORMATION</h2>
@@ -1869,7 +1877,7 @@ function Checkout({
     <div className="checkout">
       <div className="checkout-head">
         <button type="button" className="brand" onClick={() => go("home")}>
-            WESTERN
+          <EchoLogo />
         </button>
         <span>SECURE CHECKOUT 🔒</span>
       </div>
@@ -2003,7 +2011,7 @@ function Account({
     <div className="dashboard">
       <aside>
         <button className="brand" onClick={() => go("home")}>
-          WESTERN
+          <EchoLogo />
         </button>
         <p>MY ACCOUNT</p>
         {tabs.map((x) => (
@@ -2216,7 +2224,7 @@ function AdminLogin({ onLogin }: { onLogin: () => void }) {
   return (
     <div className="admin-login">
       <form onSubmit={submit}>
-        <small>WESTERN / ADMIN</small>
+        <small>ECHO / ADMIN</small>
         <h1>ADMIN LOGIN</h1>
         <label>
           USERNAME
@@ -2776,7 +2784,7 @@ function Admin({
     <div className="admin">
       <aside>
         <div className="admin-logo">
-          WESTERN<span>ADMIN</span>
+          <EchoLogo /><span>ADMIN</span>
         </div>
         {adminTabs.map((x, i) => (
           <button
@@ -3484,7 +3492,7 @@ function AdminPanel({
       const downloadUrl = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = downloadUrl;
-      link.download = "western-hero-banner";
+      link.download = "echo-hero-banner";
       document.body.appendChild(link);
       link.click();
       link.remove();
@@ -3995,7 +4003,7 @@ function AdminPanel({
               className="order-modal"
               onMouseDown={(e) => e.stopPropagation()}
             >
-              <div className="print-only print-order-brand">WESTERN</div>
+              <div className="print-only print-order-brand">ECHO</div>
               <div className="modal-head">
                 <div>
                   <small>ORDER DETAILS</small>
@@ -4821,7 +4829,7 @@ function AdminPanel({
         <div className="form-two">
           <label>
             STORE NAME
-            <input defaultValue="WESTERN" />
+            <input defaultValue="ECHO" />
           </label>
           <label>
             CURRENCY
@@ -4985,7 +4993,7 @@ function Footer({
     <footer>
       <div className="foot-brand-col">
         <div className="brand foot-brand">
-          WESTERN
+          <EchoLogo />
         </div>
         <p>
           STREETWEAR, BORN IN CAIRO.
@@ -5055,7 +5063,7 @@ function Footer({
             WHATSAPP ↗
           </a>
         )}
-        <a href="mailto:hello@western.com">HELLO@WESTERN.COM</a>
+        <a href="mailto:hello@echo.com">HELLO@ECHO.COM</a>
         <p>
           {(() => {
             const parts = homepage.storeLocation.split(",").map((s) => s.trim());
@@ -5075,7 +5083,7 @@ function Footer({
         </p>
       </div>
       <div className="copyright">
-        <span>© 2026 WESTERN</span>
+        <span>© 2026 ECHO</span>
         <span>CAIRO — 30.0444° N, 31.2357° E</span>
       </div>
     </footer>

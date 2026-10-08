@@ -26,7 +26,7 @@ export async function POST(request: Request) {
     const settings = await SiteSettings.findOne({ id: 1 }).select("contactEmail").lean();
     const contactEmail = String(settings?.contactEmail ?? "").trim();
     const apiKey = process.env.RESEND_API_KEY;
-    const from = process.env.CONTACT_FROM_EMAIL || "WESTERN Contact <onboarding@resend.dev>";
+    const from = process.env.CONTACT_FROM_EMAIL || "ECHO Contact <onboarding@resend.dev>";
     if (!contactEmail)
       return Response.json({ error: "The store contact email is not configured yet." }, { status: 503 });
     if (!apiKey)
@@ -42,7 +42,7 @@ export async function POST(request: Request) {
         from,
         to: [contactEmail],
         reply_to: email,
-        subject: `[WESTERN CONTACT] ${subject}`,
+        subject: `[ECHO CONTACT] ${subject}`,
         html: `<h2>New contact message</h2><p><strong>Name:</strong> ${escapeHtml(fullName)}</p><p><strong>Email:</strong> ${escapeHtml(email)}</p><p><strong>Subject:</strong> ${escapeHtml(subject)}</p><p>${escapeHtml(message).replaceAll("\n", "<br>")}</p>`,
       }),
     });

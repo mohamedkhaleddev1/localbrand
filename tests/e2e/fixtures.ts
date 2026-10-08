@@ -26,15 +26,15 @@ export const settings = {
   storyImage: "/og.png",
   aboutImage: "/og.png",
   ticker: ["FREE DELIVERY OVER 2,500 EGP", "TESTED IN CAIRO", "EASY EXCHANGES"],
-  marquee: "STREET-BORN   BUILT DIFFERENT   WESTERN",
+  marquee: "STREET-BORN   BUILT DIFFERENT   ECHO",
   eyebrow: "TEST / DROP 01",
   headline: "BUILT FOR AUTOMATION.",
   deliveryFee: 80,
   freeDeliveryFrom: 2500,
   deliveryFees: [{ city: "CAIRO", fee: 80 }, { city: "GIZA", fee: 100 }],
-  instagramUrl: "https://instagram.com/western",
-  tiktokUrl: "https://tiktok.com/@western",
-  facebookUrl: "https://facebook.com/western",
+  instagramUrl: "https://instagram.com/echo",
+  tiktokUrl: "https://tiktok.com/@echo",
+  facebookUrl: "https://facebook.com/echo",
   whatsappNumber: "+201000000000",
   storeLocation: "Zamalek, Cairo, Egypt",
   contactEmail: "hello@example.com",
@@ -92,5 +92,5 @@ export async function mockApi(page: Page, options: { authenticated?: boolean } =
 
 export async function openStore(page: Page) {
   await page.goto("/");
-  await expect(page.getByRole("button", { name: "WESTERN" }).first()).toBeVisible();
+  await expect(page.getByRole("button", { name: "ECHO" }).first()).toBeVisible();
 }

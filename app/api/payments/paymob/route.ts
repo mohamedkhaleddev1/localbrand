@@ -30,7 +30,7 @@ export async function POST(request: Request) {
     status: "PENDING",
   });
   const amountCents = Math.round(total * 100);
-  const merchantOrderId = `WESTERN-${pending.id}`;
+  const merchantOrderId = `ECHO-${pending.id}`;
 
   try {
     const authResponse = await fetch(
