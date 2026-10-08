@@ -28,6 +28,11 @@ body {
   font-weight: 950;
   letter-spacing: -0.06em;
 }
+.site-loading-logo {
+  display: block;
+  width: min(900px, 100vw);
+  height: auto;
+}
 .contact-form {
   max-width: 760px;
   display: grid;
@@ -238,31 +243,8 @@ header {
   left: -25px;
   top: -62px;
 }
-.echo-logo .echo-logo-dark {
-  display: none;
-  width: 195px;
-  left: -30px;
-  top: -68px;
-}
 .dark-mode .echo-logo-light {
-  display: none;
-}
-.dark-mode .echo-logo-dark {
-  display: block;
-}
-.echo-logo-loading {
-  width: min(320px, 72vw);
-  height: min(68px, 15vw);
-}
-.echo-logo-loading .echo-logo-light {
-  width: min(456px, 102.6vw);
-  left: max(-61px, -13.7vw);
-  top: max(-152px, -34.2vw);
-}
-.echo-logo-loading .echo-logo-dark {
-  width: min(480px, 108vw);
-  left: max(-74px, -16.65vw);
-  top: max(-167px, -37.6vw);
+  filter: invert(1);
 }
 .admin-logo .echo-logo {
   width: 105px;
@@ -273,11 +255,6 @@ header {
   left: -20px;
   top: -50px;
 }
-.admin-logo .echo-logo-dark {
-  width: 158px;
-  left: -24px;
-  top: -55px;
-}
 .foot-brand .echo-logo {
   width: 190px;
   height: 41px;
@@ -287,13 +264,8 @@ header {
   left: -37px;
   top: -91px;
 }
-.foot-brand .echo-logo-dark {
-  width: 285px;
-  left: -44px;
-  top: -99px;
-}
-.brand > span:not(.logo-e),
-.admin-logo > span:not(.logo-e) {
+.brand > span:not(.logo-e):not(.echo-logo),
+.admin-logo > span:not(.logo-e):not(.echo-logo) {
   display: inline-block;
   background: var(--acid);
   font-size: 0.55em;

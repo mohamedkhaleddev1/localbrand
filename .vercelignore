@@ -12,3 +12,4 @@ test-results
 .codex-finalizer
 *.tar.gz
 *.log
+.env*

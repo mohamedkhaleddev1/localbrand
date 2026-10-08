@@ -172,7 +172,6 @@ function EchoLogo({ className = "" }: { className?: string }) {
   return (
     <span className={`echo-logo ${className}`.trim()} aria-label="ECHO">
       <img className="echo-logo-light" src="/echo-logo-light.png" alt="ECHO" />
-      <img className="echo-logo-dark" src="/echo-logo.jpeg" alt="" aria-hidden="true" />
     </span>
   );
 }
@@ -482,7 +481,7 @@ export default function Cairo26App({
   if (!homepageLoaded) {
     return (
       <main className="site-loading" aria-busy="true" aria-label="Loading store">
-        <EchoLogo className="echo-logo-loading" />
+        <img className="site-loading-logo" src="/echo-logo.jpeg" alt="ECHO" />
       </main>
     );
   }
@@ -1780,7 +1779,7 @@ function Checkout({
     const area = String(form.get("area") || "").trim();
     const address = String(form.get("address") || "").trim();
     const notes = String(form.get("notes") || "").trim();
-    const paymentMethod = String(form.get("pay") || "cod");
+    const paymentMethod = "cod";
     if (!email || !first || !phone) {
       notify("Please fill in all required fields");
       return;
@@ -1809,24 +1808,6 @@ function Checkout({
       delivery,
       total,
     };
-    if (paymentMethod === "card") {
-      try {
-        const response = await fetch("/api/payments/paymob", {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify(orderPayload),
-        });
-        const data = await response.json().catch(() => ({}));
-        if (!response.ok || !data.iframeUrl) {
-          notify(data.error || "Could not start card payment. Please try again.");
-          return;
-        }
-        window.location.href = data.iframeUrl;
-      } catch {
-        notify("Could not start card payment. Please try again.");
-      }
-      return;
-    }
     try {
       const response = await fetch("/api/orders", {
         method: "POST",
@@ -1928,12 +1909,8 @@ function Checkout({
           <small>04 / PAYMENT</small>
           <h2>PAYMENT METHOD</h2>
           <label className="pay">
-            <input type="radio" defaultChecked name="pay" value="cod" /> CASH
+            <input type="radio" checked readOnly name="pay" value="cod" /> CASH
             ON DELIVERY <span>PAY WHEN IT ARRIVES</span>
-          </label>
-          <label className="pay">
-            <input type="radio" name="pay" value="card" /> CREDIT / DEBIT
-            CARD <span>VISA • MASTERCARD</span>
           </label>
           <button
             className="add"
@@ -4029,9 +4006,7 @@ function AdminPanel({
               </p>
               <p>
                 <b>PAYMENT</b>
-                {viewOrder.paymentMethod === "card"
-                  ? "CREDIT / DEBIT CARD"
-                  : "CASH ON DELIVERY"}
+                CASH ON DELIVERY
               </p>
               <hr />
               <div className="order-modal-items">
@@ -4976,7 +4951,7 @@ function FAQ() {
                 ? "Yes. Request an exchange within 14 days, with the item unworn and tags attached."
                 : i === 2
                   ? "Use the size guide on every product page, or message us for a fit check."
-                  : "Cash on delivery and secure card payments are available across Egypt."}
+                  : "Cash on delivery is available across Egypt."}
           </p>
         </details>
       ))}

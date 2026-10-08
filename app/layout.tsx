@@ -8,17 +8,17 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "ECHO — Built for the City",
   description: "Premium Egyptian streetwear. Designed in Cairo, made to move.",
-  icons: { icon: "/echo-logo.jpeg" },
+  icons: { icon: "/echo-logo-light.png" },
   openGraph: {
     title: "ECHO — Built for the City",
     description: "Premium Egyptian streetwear. Designed in Cairo, made to move.",
-    images: [{ url: "/echo-logo.jpeg", width: 900, height: 733, alt: "ECHO logo" }],
+    images: [{ url: "/echo-logo-light.png", width: 554, height: 451, alt: "ECHO logo" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "ECHO — Built for the City",
     description: "Premium Egyptian streetwear. Designed in Cairo, made to move.",
-    images: ["/echo-logo.jpeg"],
+    images: ["/echo-logo-light.png"],
   },
 };
 
